@@ -6,7 +6,7 @@
 
 @section('content')
 
-	<p>Plant Details</p>
+	<h4>Plant Details</h4>
         <?php
                 foreach($plants as $plant)
                 {

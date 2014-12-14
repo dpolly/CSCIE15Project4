@@ -6,10 +6,9 @@
 
 @section('content')
 
-	<p>Plant Listing</p>
+	<p>Your Search Results</p>
 
 	@if($query)
-		<h5>You searched for {{{ $query }}} and your results where........</h5>
 		@if(sizeof($plants) == 0)
         		<p>Sorry! there were no results for your search</p>
        	@else

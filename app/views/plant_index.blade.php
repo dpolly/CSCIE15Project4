@@ -1,24 +1,15 @@
 @extends('master')
 
 @section('title')
-	Dpolly.me Plants
-@stop
-
-@section('content menu')
-    <a href="/plant">SEARCH</a><br>
-    <a href="/plant/create">ADD</a><br>
-    <a href="/plant/edit">EDIT</a><br>
-    <a href="/plant/delete">DELETE</a>
+	Dpolly.me Search Plants
 @stop
 
 @section('content')
 
-    <p>Plant Listing</p>
+    <p>Database Search</p>
     {{ Form::open(array('url' => '/plant')) }}
-
-    {{ Form::label('Search','Search Criteria') }}
     {{ Form::text('query'); }}
-    {{ Form::submit('Search Database'); }}
+    {{ Form::submit('Go!'); }}
 
    {{ Form::close() }}
 
