@@ -33,7 +33,10 @@
             <div class="panel">
                 <div class="small-4 columns">
                     <div class="panel">
-                            @yield('content menu')
+                                <a href="/plant">SEARCH</a><br>
+                                <a href="/plant/create">ADD</a><br>
+                                <a href="/plant/edit">EDIT</a><br>
+                                <a href="/plant/delete">DELETE</a>
                     </div>
                 </div>
                 <div class="small-8 columns">
