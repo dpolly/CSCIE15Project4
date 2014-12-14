@@ -1,0 +1,54 @@
+/*
+    DMP 11-29-2014: Created custom CSS for initial page design
+*/
+body
+{
+    background-image: url("../img/Tomatoes.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #ffffff;
+}
+.panel
+{
+    background: #fce8ba; /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover,  #fce8ba 0%, #f25918 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#fce8ba), color-stop(100%,#f25918)); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  #fce8ba 0%,#f25918 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  #fce8ba 0%,#f25918 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  #fce8ba 0%,#f25918 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center,  #fce8ba 0%,#f25918 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fce8ba', endColorstr='#f25918',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.panel h1, .panel h2, .panel h3, .panel h4, .panel h5, .panel h6, .panel p, .panel li, .panel dl
+{
+    color: #ffffff;
+}
+.accordion .accordion-navigation.active > a, .accordion dd.active > a, .accordion .accordion-navigation > a, .accordion dd > a, .accordion .accordion-navigation > a:hover, .accordion dd > a:hover, .accordion .accordion-navigation > .content.active, .accordion dd > .content.active
+{
+    background: #fce8ba; /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover,  #fce8ba 0%, #f25918 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#fce8ba), color-stop(100%,#f25918)); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  #fce8ba 0%,#f25918 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  #fce8ba 0%,#f25918 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  #fce8ba 0%,#f25918 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center,  #fce8ba 0%,#f25918 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fce8ba', endColorstr='#f25918',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+#menu1 h6
+{
+    color: #000000;
+}
+
+#footer
+{
+    text-align: center;
+}
+
+/*
+.links
+{
+    color: #ffffff;
+}
+*/
