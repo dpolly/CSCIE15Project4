@@ -26,7 +26,9 @@ class Plant extends Eloquent
         return $this->belongsToMany('Category');
     }
 
-
+    /*
+     * Searches the plant database and returns all matching results
+     */
     public static function search($query)
     {
         $plants=array();
@@ -45,7 +47,6 @@ class Plant extends Eloquent
                 ->orWhere('id', 'LIKE', "$query")
                 ->get();
         }
-        # Otherwise, just fetch first plant
         else
         {
              $plants = Plant::all();
