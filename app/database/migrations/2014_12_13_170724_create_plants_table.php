@@ -1,6 +1,7 @@
 <?php
 /**
  * 12-13-2014 DMP: added up/drop for columns
+ * 12-15-2014 DMP: updated botanical name field
  */
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
