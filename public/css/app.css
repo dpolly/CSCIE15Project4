@@ -1,12 +1,18 @@
 /*
-    DMP 11-29-2014: Created custom CSS for initial page design
+    11-29-2014 DMP: Created custom CSS for initial page design
+    12-15-2014 DMP: Added class error
 */
 body
 {
-    background-image: url("../img/Tomatoes.png");
+    background-image: url("../img/tomatoes.png");
     background-repeat: no-repeat;
     background-position: center;
     color: #ffffff;
+}
+
+.error
+{
+    color: chartreuse;
 }
 .panel
 {
