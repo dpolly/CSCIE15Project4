@@ -19,7 +19,7 @@ class CreatePlantsTable extends Migration {
             $table->increments('id');
             $table->timestamps();
             $table->integer('family_id')->unsigned();
-            $table->string('botanical_name');
+            $table->string('botanical_name')->unique();
             $table->string('common_name');
             $table->foreign('family_id')->references('id')->on('families');
         });
