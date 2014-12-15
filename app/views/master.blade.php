@@ -18,7 +18,7 @@
 
      <div id="header" class="row">
             <div class="small-2 columns">
-                  <img src="{{ URL::asset('img/logo.png') }}">
+                  <img src="{{ URL::asset('img/logo.png')}} alt="Logo Purple Siberian Iris"">
             </div>
             <div class="small-10 columns">
                   <div class="panel">
