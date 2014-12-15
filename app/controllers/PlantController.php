@@ -3,6 +3,7 @@
  * 12-13-2014 DMP: Created
  * 12-13-2014 DMP: Added method(s):getIndex, getCreate
  * 12-14-2014 DMP: Added method(s):postCreate, postDelete, getEdit, postEdit, getSearch, postSearch,
+ * 12-15-2014 DMP: Updated method(s):postCreate-added validation for botanical name
  */
 
 class PlantController extends BaseController
@@ -45,15 +46,35 @@ class PlantController extends BaseController
      */
     public function postCreate()
     {
-        $plant = new Plant();
-        $plant->fill(Input::except('categories'));
-        $plant->save();
+        $rule = array
+        (
+            'botanical_name' => 'required|unique:plants,botanical_name'
+        );
 
-        foreach (Input::get('categories') as $category)
+        $ruleValidate = Validator::make(Input::all(), $rule);
+
+        if ($ruleValidate->fails())
         {
-            $plant->categories()->save(Category::find($category));
+            return Redirect::to('/plant/create')
+                ->withInput()
+                ->withErrors($ruleValidate);
+        } else {
+
+            $plant = new Plant();
+            $plant->fill(Input::except('categories'));
+            $plant->save();
+
+            foreach (Input::get('categories') as $category) {
+                $plant->categories()->save(Category::find($category));
+            }
+            return Redirect::action('PlantController@getIndex');
+
         }
-        return Redirect::action('PlantController@getIndex');
+
+
+
+
+
     }
 
     /*
