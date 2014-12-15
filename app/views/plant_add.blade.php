@@ -8,6 +8,8 @@
 
 	<p>Add Plant in Database</p>
 
+
+
 	{{ Form::open(array('url' => '/plant/create')) }}
 
     {{ Form::label('common_name','Common Name') }}
@@ -15,6 +17,11 @@
 
     {{ Form::label('botanical_name','Botanical Name') }}
     {{ Form::text('botanical_name'); }}
+
+    @foreach($errors->all() as $message)
+        	<div class='error'> Error! {{ $message }} </div>
+        	<br>
+    @endforeach
 
     {{ Form::label('family_id', 'What family is the plant in?') }}
     {{ Form::select('family_id', $families); }}
