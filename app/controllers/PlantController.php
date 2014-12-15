@@ -14,9 +14,9 @@ class PlantController extends BaseController
     }
 
     /*
-     * Displays the plant menu
+     * Displays the plant database search bar
      *
-     * return       view plant_index
+     * return       the view plant_index
      */
     public function getIndex()
     {
@@ -24,9 +24,9 @@ class PlantController extends BaseController
     }
 
     /*
-     * Displays the add plant view
+     * Displays the add plant record view
      *
-     * return       view plant_add
+     * return       the view plant_add
      */
     public function getCreate()
     {
@@ -39,9 +39,9 @@ class PlantController extends BaseController
     }
 
     /*
-     * Process the add plant view
+     * Process addition of plant record
      *
-     * return       view plant_index
+     * return       the view plant_index
      */
     public function postCreate()
     {
@@ -56,6 +56,56 @@ class PlantController extends BaseController
         return Redirect::action('PlantController@getIndex');
     }
 
+    /*
+     * Process deletion of plant record
+     *
+     * return   the view plant_index
+     */
+    public function postDelete()
+    {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        $plant = Plant::findOrFail(Input::get('id'));
+        Plant::destroy(Input::get('id'));
+
+        return View::make('plant_index');
+    }
+
+    /*
+     * Displays the edit plant record view
+     *
+     * returns      the plant_edit view
+     */
+    public function getEdit($id)
+    {
+        $families = Family::getFamilyName();
+        $plants = Plant::with('categories')->findOrFail($id);
+        $categories = Category::getCategoryName();
+
+        return View::make('plant_edit')
+            ->with('plant', $plants)
+            ->with('family', $families)
+            ->with('category', $categories);
+    }
+
+    /*
+     * Process update of plant record
+     *
+     * return       the plant_index view
+     */
+    public function postEdit()
+    {
+        $plant = Plant::with('categories')->findOrFail(Input::get('id'));
+        $plant->fill(Input::except('categories'));
+        $plant->save();
+
+        return View::make('plant_index');
+    }
+
+    /*
+     * Displays the search results for single record after end user clicks on record
+     *
+     * return       the plant_search view
+     */
     public function getSearch($id)
     {
         $plants = Plant::search($id);
@@ -63,6 +113,11 @@ class PlantController extends BaseController
             ->with('plants', $plants);
     }
 
+    /*
+     * Process search request returning results of all matching records
+     *
+     * returns      the plant_search_results view
+     */
     public function postSearch()
     {
         $query  = Input::get('query');
