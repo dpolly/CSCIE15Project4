@@ -2,7 +2,7 @@
 /*
  * 12-13-2014 DMP: Created
  * 12-13-2014 DMP: Added method(s):getIndex, getCreate
- * 12-14-2014 DMP: Added method(s):postCreate, getSearch, postSearch
+ * 12-14-2014 DMP: Added method(s):postCreate, postDelete, getEdit, postEdit, getSearch, postSearch,
  */
 
 class PlantController extends BaseController
