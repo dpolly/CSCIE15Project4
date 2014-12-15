@@ -1,4 +1,4 @@
-@extends('plant_index')
+@extends('master')
 
 @section('title')
 	Dpolly.me Plant Details
@@ -10,7 +10,6 @@
         <?php
                 foreach($plants as $plant)
                 {
-
                   echo  'Common Name: '. $plant->common_name.'<br>'.
                         'Botanical Name: '. $plant->botanical_name. '<br>'.
                         'Family: '. $plant->family->botanical_name. '<br>'.
@@ -21,6 +20,7 @@
                               echo $category->name . ", ";
                          }
                   echo '<br><br>';
+                  echo '<a href=/plant/edit/'.$plant->id.' >EDIT </a>';
                 }
         ?>
 @stop

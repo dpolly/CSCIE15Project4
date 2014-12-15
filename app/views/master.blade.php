@@ -33,10 +33,9 @@
             <div class="panel">
                 <div class="small-4 columns">
                     <div class="panel">
-                                <a href="/plant">SEARCH</a><br>
-                                <a href="/plant/create">ADD</a><br>
-                                <a href="/plant/edit">EDIT</a><br>
-                                <a href="/plant/delete">DELETE</a>
+                                <a href="/plant">SEARCH Database</a><br>
+                                <a href="/plant/create">ADD New Plant</a><br>
+
                     </div>
                 </div>
                 <div class="small-8 columns">

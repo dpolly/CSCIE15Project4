@@ -1,4 +1,4 @@
-@extends('plant_index')
+@extends('master')
 
 @section('title')
 	Dpolly.me Plant Search Results
