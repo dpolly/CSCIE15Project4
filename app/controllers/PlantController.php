@@ -58,23 +58,19 @@ class PlantController extends BaseController
             return Redirect::to('/plant/create')
                 ->withInput()
                 ->withErrors($ruleValidate);
-        } else {
+        }
 
             $plant = new Plant();
             $plant->fill(Input::except('categories'));
             $plant->save();
 
+        if (Input::get('categories')) {
             foreach (Input::get('categories') as $category) {
                 $plant->categories()->save(Category::find($category));
             }
-            return Redirect::action('PlantController@getIndex');
+            }
 
-        }
-
-
-
-
-
+        return Redirect::action('PlantController@getIndex');
     }
 
     /*
