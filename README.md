@@ -11,7 +11,7 @@ Denise M Polly
 Web Application for a Plant Database  
 
 ## DEMO
-Jing Demo: http://www.screencast.com/t/comming....
+Jing Demo:http://www.screencast.com/t/hqPP4pbk
 
 ## NOTES FOR TEACHING TEAM:
  *No password for Github
